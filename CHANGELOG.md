@@ -1,5 +1,9 @@
 # Podspec
 
+## 0.1.1
+
+- [gemspec] set `github-readme` version
+
 ## 0.1.0
 
 - [gemspec] use `github-readme`
