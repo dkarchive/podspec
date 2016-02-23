@@ -19,5 +19,5 @@ Gem::Specification.new do |spec|
   spec.executables   = [Podspec::PRODUCT]
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'github-readme'
+  spec.add_runtime_dependency 'github-readme', '~> 0.1.0.pre'
 end
