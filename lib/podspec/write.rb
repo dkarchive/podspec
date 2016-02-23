@@ -1,8 +1,6 @@
 # Write Podspec file
 module Podspec
   class << self
-    require 'pp'
-
     DESC = "# s.description  = \"A description of the Pod more detailed than the summary.\""
     IOS = '8.0'
 
@@ -19,27 +17,17 @@ module Podspec
       summary = "\"#{s['summary']}\""
 
       readme = s['readme']
-      num_lines = 1
-      description = if readme.nil?
-        DESC
+      d = s['description']
+
+      if d.nil?
+        description = DESC
       else
-        lines = readme.split "\n"
-        d = []
-        lines[1..-1].each do |l|
-          unless (l.include? '==') || (l.include? '[') || (l.include? '#') || (l.include? '<')
-            d.push l if l.length > 0
+        description =
+          if d == summary
+            DESC
+          else
+            "s.description  = \"#{d}\""
           end
-          # puts d.count
-          break if d.count == num_lines
-        end
-
-        d = "\"#{d[0]}\""
-
-        if d == summary
-          DESC
-        else
-          "s.description  = #{d}"
-        end
       end
 
       source_files = "#{s['source_folder']}/*.{h,m,swift}"
@@ -59,7 +47,7 @@ module Podspec
 
   s.source       = { :git => "#{git}", :tag => "#{s['tag']}" }
 
-  s.source_files = "#{source_files}",
+  s.source_files = "#{source_files}"
 
   s.ios.deployment_target = "#{IOS}"
   # s.osx.deployment_target = "10.9"
