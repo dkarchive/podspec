@@ -4,21 +4,18 @@ Effortlessly create a [CocoaPods Podspec](https://guides.cocoapods.org/making/sp
 
 ![](http://i.giphy.com/rsQu1BC0BF8wo.gif)
 
+[![Gem Version](https://badge.fury.io/rb/podspec.svg)](https://badge.fury.io/rb/podspec) [![Build Status](https://travis-ci.org/dkhamsing/podspec.svg)](https://travis-ci.org/dkhamsing/podspec)
+
 ## Installation
 
 ```shell
-$ git clone https://github.com/dkhamsing/podspec.git
-$ cd podspec/
-$ rake install
+$ gem install podspec --pre
 ```
-
-This project requires GitHub credentials in [.netrc](https://github.com/octokit/octokit.rb#using-a-netrc-file).
 
 ## Usage
 
 ```shell
 $ podspec postmates/PMJSON
-podspec 0.1.0
 Generating Podspec for postmates/PMJSON...
 Wrote PMJSON.podspec in 3s ✨
 ```
@@ -65,7 +62,7 @@ Analyzed 1 podspec.
 PMJSON.podspec passed validation.
 ```
 
-😎
+:coffee: 
 
 ## Contact
 

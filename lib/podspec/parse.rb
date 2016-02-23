@@ -1,8 +1,7 @@
 # Parse GitHub repository into spec values
 module Podspec
   class << self
-    require 'octokit'
-    require 'netrc'
+    require 'github-readme'
 
     SOURCE_FILES = [
       'Sources'
@@ -12,7 +11,7 @@ module Podspec
       puts "Generating Podspec for #{repo}..."
 
       begin
-        c = Octokit::Client.new(netrc: true)
+        c = Octokit
       rescue => e
         return {
           'error' => e
@@ -84,18 +83,20 @@ module Podspec
 
         git = r['git_url']
 
-        begin
-          re = c.readme repo
-          content = re['content']
-          readme = Base64.decode64 content unless content.nil?
-        rescue => e
+        r = GitHubReadme::get repo
+        if r['error'].nil?
+          readme = r['readme']
+          description = r['summary']
+        else
           readme = nil
+          description = nil
         end
 
         return {
           'error' => nil,
           'name' => name,
           'summary' => summary,
+          'description' => description,
           'license' => license,
           'git' => git,
           'tag' => tag,
