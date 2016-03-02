@@ -22,7 +22,7 @@ module Podspec
         description = DESC
       else
         description =
-          if d == summary
+          if d == summary.gsub('"', '')
             DESC
           else
             "s.description  = \"#{d}\""
