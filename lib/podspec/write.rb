@@ -16,7 +16,6 @@ module Podspec
 
       summary = "\"#{s['summary']}\""
 
-      readme = s['readme']
       d = s['description']
 
       if d.nil?
