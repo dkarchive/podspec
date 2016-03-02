@@ -31,6 +31,8 @@ module Podspec
 
       source_files = "#{s['source_folder']}/*.{h,m,swift}"
 
+      license = s['license'].gsub('"', '\"')
+
       spec =
 %{Pod::Spec.new do |s|
   s.name         = "#{name}"
@@ -40,7 +42,7 @@ module Podspec
 
   s.homepage     = "#{homepage}"
 
-  s.license      = "#{s['license']}"
+  s.license      = "#{license}"
 
   s.author       = "#{s['author']}"
 
