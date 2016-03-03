@@ -18,7 +18,7 @@ module Podspec
           if d == s
             DESC
           else
-            "s.description  = \"#{d}\""
+            "s.description  = \"#{escape d}\""
           end
       end
 
@@ -93,7 +93,7 @@ module Podspec
       {
         'name' => s['name'],
         'version' => s['version'],
-        'summary' => summary,
+        'summary' => escape(summary),
         'description' => description(s['description'], summary),
         'homepage' => homepage,
         'license' => escape(s['license']),
