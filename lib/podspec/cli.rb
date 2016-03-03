@@ -1,8 +1,8 @@
 # Command line interface
-module Podspec
-  require 'podspec/version'
+module Podspec  
   require 'podspec/parse'
-  require 'podspec/write'
+  require 'podspec/spec'
+  require 'podspec/version'
 
   class << self
 
@@ -40,10 +40,13 @@ module Podspec
         puts "Warning: #{x}"
       end
 
-      p = write_podspec parsed
+      s = create_spec parsed
+
+      filename = "#{parsed['name']}.podspec"
+      File.open(filename, 'w') { |f| f.write(s) }
       elapsed_seconds = Time.now - elapsed_time_start
 
-      puts "Wrote #{p} in #{elapsed_seconds.round}s ✨"
+      puts "Wrote #{filename} in #{elapsed_seconds.round}s ✨"
 
       puts %{
 • You can use an alternative author / authors format

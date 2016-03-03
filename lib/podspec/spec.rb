@@ -1,10 +1,10 @@
-# Write Podspec file
+# Create spec
 module Podspec
   class << self
     DESC = "# s.description  = \"A description of the Pod more detailed than the summary.\""
     IOS = '8.0'
 
-    def write_podspec(s)
+    def create_spec(s)
       name = s['name']
 
       homepage = s['homepage ']
@@ -57,10 +57,7 @@ module Podspec
 end
 }
 
-      filename = "#{name}.podspec"
-      File.open(filename, 'w') { |f| f.write(spec) }
-
-      return filename
+      spec
     end
 
   end
