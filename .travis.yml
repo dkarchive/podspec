@@ -7,6 +7,6 @@ script:
   - bundle exec podspec
   - gem install podspec --pre
 after_script:
-  - bundle exec podspec postmates/PMJSON
+  - podspec postmates/PMJSON
   - cat PMJSON.podspec
-  - pod spec lint PMJSON.podspec --verbose
+  - pod spec lint PMJSON.podspec
