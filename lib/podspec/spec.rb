@@ -70,8 +70,8 @@ module Podspec
     end
 
     def homepage(s)
-      homepage = s['homepage ']
-      homepage = s['html_url'] if homepage.nil?
+      homepage = s['homepage']
+      homepage = s['html_url'] if homepage.nil? || homepage==''
       homepage
     end
 
