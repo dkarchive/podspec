@@ -93,8 +93,8 @@ module Podspec
       {
         'name' => s['name'],
         'version' => s['version'],
-        'summary' => summary,
-        'description' => description(s['description'], summary),
+        'summary' => escape(summary),
+        'description' => escape(description(s['description'], summary)),
         'homepage' => homepage,
         'license' => escape(s['license']),
         'author' => s['author'],
