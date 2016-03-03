@@ -1,5 +1,12 @@
 # Podspec
 
+## 0.2.0
+
+- [podspec] refactor, isolate, rspec tests
+- [podspec] escape double quote for `license`, `summary`, `description`
+- [podspec] fix logic for description
+- [podspec] fix logic for homepage
+
 ## 0.1.1
 
 - [gemspec] use `github-readme`
