@@ -62,7 +62,13 @@ Analyzed 1 podspec.
 PMJSON.podspec passed validation.
 ```
 
-:coffee: 
+:coffee:
+
+## Examples
+
+- https://github.com/storehouse/Advance/pull/3
+- https://github.com/postmates/PMJSON/pull/3
+- https://github.com/dkhamsing/TwitterSafariViewControllerAuth
 
 ## Contact
 
