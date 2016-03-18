@@ -1,4 +1,12 @@
-# Podspec
+# Podspec changelog
+
+## 0.2.0
+
+- [parse] use semver to get latest tag
+- [podspec] refactor, isolate, rspec tests
+- [podspec] escape double quote for `license`, `summary`, `description`
+- [podspec] fix logic for description
+- [podspec] fix logic for homepage
 
 ## 0.1.1
 
