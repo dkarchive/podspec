@@ -7,6 +7,10 @@ module Podspec
       'Sources'
     ]
 
+    def tag(name)
+      name.gsub(/[A-z]/, '').gsub('-','')
+    end
+
     def parse(repo)
       puts "Generating Podspec for #{repo}..."
 
@@ -32,12 +36,18 @@ module Podspec
         summary = r['description']
 
         begin
-          t = c.tags(repo)[0]
+          tags = c.tags(repo)
         rescue => e
           return {
             'error' => e
           }
         end
+
+        t = tags.sort do |a,b|
+          v1 = tag a['name']
+          v2 = tag b['name'] 
+          Gem::Version.new(v2) <=> Gem::Version.new(v1)
+        end[0]
 
         return {
           'error' => 'No tags'
