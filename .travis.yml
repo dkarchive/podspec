@@ -5,7 +5,7 @@ install:
   - bundle install
 script:
   - bundle exec podspec
-  - gem install podspec --pre
+  - gem install podspec 
   - rspec -fd 
 after_script:
   - podspec postmates/PMJSON
