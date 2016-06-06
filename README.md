@@ -9,7 +9,7 @@ Effortlessly create a [CocoaPods Podspec](https://guides.cocoapods.org/making/sp
 ## Installation
 
 ```shell
-$ gem install podspec --pre
+$ gem install podspec
 ```
 
 ## Usage
@@ -68,6 +68,7 @@ PMJSON.podspec passed validation.
 
 - https://github.com/storehouse/Advance/pull/3
 - https://github.com/postmates/PMJSON/pull/3
+- https://github.com/carantes/CircularProgressControl/pull/7
 - https://github.com/dkhamsing/TwitterSafariViewControllerAuth
 
 ## Contact
