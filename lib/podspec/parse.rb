@@ -11,6 +11,12 @@ module Podspec
       name.gsub(/[A-z]/, '').gsub('-','')
     end
 
+    def ver(t)
+      return t if t=='TODO'
+
+      t.gsub(/[a-zA-Z]/, '')
+    end
+
     def parse(repo)
       puts "Generating Podspec for #{repo}..."
 
@@ -36,6 +42,12 @@ module Podspec
         summary = r['description']
 
         begin
+          license = r['license']['name']
+        rescue
+          license = nil
+        end
+
+        begin
           tags = c.tags(repo)
         rescue => e
           return {
@@ -43,29 +55,19 @@ module Podspec
           }
         end
 
-        t = tags.sort do |a,b|
-          v1 = tag a['name']
-          v2 = tag b['name'] 
-          Gem::Version.new(v2) <=> Gem::Version.new(v1)
-        end[0]
+        if c.tags(repo).count > 0
+          t = tags.sort do |a,b|
+            v1 = tag a['name']
+            v2 = tag b['name']
+            Gem::Version.new(v2) <=> Gem::Version.new(v1)
+          end[0]
 
-        return {
-          'error' => 'No tags'
-        } if c.tags(repo).count == 0
-
-        begin
-          license = r['license']['name']
-        rescue
-          license = nil
-        end
-
-        begin
           tag = t['name']
-          version = tag.gsub(/[a-zA-Z]/, '')
-        rescue
-          tag = nil
-          version = nil;
+        else
+          tag = 'TODO'
         end
+
+        version = ver(tag)
 
         contents = c.contents repo
         folders = contents.select { |x| x['type']=='dir'}.map { |f| f['name'] }
