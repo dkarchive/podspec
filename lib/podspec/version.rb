@@ -1,6 +1,6 @@
 # Version, constants
 module Podspec
-  VERSION = '0.2.0'
+  VERSION = '0.3.0'
 
   PRODUCT = 'podspec'
 end

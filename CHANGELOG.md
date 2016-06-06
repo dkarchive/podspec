@@ -1,5 +1,9 @@
 # Podspec changelog
 
+## 0.3.0
+
+- [parse] make tag optional
+
 ## 0.2.0
 
 - [parse] use semver to get latest tag

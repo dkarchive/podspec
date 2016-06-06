@@ -25,5 +25,13 @@ describe Podspec do
         expect(value).to eql(expected)
       end
     end
+
+    context "given TODO tag" do
+      value = Podspec::ver 'TODO'
+      expected = 'TODO'
+      it "version is TODO" do
+        expect(value).to eql(expected)
+      end
+    end
   end
 end
