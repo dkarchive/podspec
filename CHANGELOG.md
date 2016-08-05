@@ -1,5 +1,9 @@
 # Podspec changelog
 
+## 0.3.1
+
+- [podspec] cleanup indentation
+
 ## 0.3.0
 
 - [parse] make tag optional

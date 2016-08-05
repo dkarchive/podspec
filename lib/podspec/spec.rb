@@ -46,27 +46,27 @@ module Podspec
       tvos = options['tvos']
 
       %{Pod::Spec.new do |s|
-        s.name         = "#{name}"
-        s.version      = "#{version}"
-        s.summary      = "#{summary}"
-        #{description}
+  s.name         = "#{name}"
+  s.version      = "#{version}"
+  s.summary      = "#{summary}"
+  #{description}
 
-        s.homepage     = "#{homepage}"
+  s.homepage     = "#{homepage}"
 
-        s.license      = "#{license}"
+  s.license      = "#{license}"
 
-        s.author       = "#{author}"
+  s.author       = "#{author}"
 
-        s.source       = #{source}
+  s.source       = #{source}
 
-        s.source_files = "#{source_files}"
+  s.source_files = "#{source_files}"
 
-        s.ios.deployment_target = "#{ios}"
-        # s.osx.deployment_target = "#{osx}"
-        # s.watchos.deployment_target = "#{watchos}"
-        # s.tvos.deployment_target = "#{tvos}"
-      end
-      }
+  s.ios.deployment_target = "#{ios}"
+  # s.osx.deployment_target = "#{osx}"
+  # s.watchos.deployment_target = "#{watchos}"
+  # s.tvos.deployment_target = "#{tvos}"
+end
+}
     end
 
     def homepage(s)
